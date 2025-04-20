@@ -3,10 +3,10 @@ import pyautogui
 import time
 import re
 
-file_name = "Minecraft.txt"
+file_name = "MonkeyIsland.txt"
 keys: list[str] = ['y', 't', 'r', 'e', 'w', 'q']
 
-BPM = 300
+BPM = 450
 
 positions = [(94, 245), (145, 248)]
 
@@ -27,6 +27,7 @@ def play(tab_data: list[list[int]], bpm: int):
     delay_time = 0.02
     shapes = 1
     pyautogui.click(*positions[0])
+    playcount = min(tab_data[0], tab_data[1], tab_data[2], tab_data[3], tab_data[4], tab_data[5])
     for i in range(len(tab_data[0])):
         if keyboard.is_pressed('esc'):
             print("Escape key pressed.")
@@ -34,19 +35,17 @@ def play(tab_data: list[list[int]], bpm: int):
         # print(f"Measure {i}\r", end="")
         hold_delay = 0
         notes = []
-        for j in range(6):
-            notes.append(tab_data[j][i])
-        notes.sort()
-        for note in notes:
-            if note == -1:
-                continue
-
+        notes = [(tab_data[j][i], j) for j in range(6) if tab_data[j][i] != -1]
+        notes.sort(reverse=shapes == 2)
+        for note_pair in notes:
+            note = note_pair[0]
+            j = note_pair[1]
             if note >= 9 and shapes != 2:
-                pyautogui.click(*positions[1])
+                pyautogui.click(*positions[1], _pause=False)
                 shapes = 2
 
             if note < 9 and shapes != 1:
-                pyautogui.click(*positions[0])
+                pyautogui.click(*positions[0], _pause=False)
                 shapes = 1
 
             if shapes == 2:
@@ -85,7 +84,7 @@ def parse_tab_line(line: str, capo: int, nulls: list[str]) -> list[int]:
 
 def read_in_file(file_name: str) -> list[list[int]]:
     file = open(file_name, 'r')
-    nulls = ['-', 'x', '/', '\\', 'p', 'h', 't', 'b']
+    nulls = ['-', 'x', '/', '\\', 'p', 'h', 't', 'b', '=']
     line_start = ['e', 'B', 'G', 'D', 'A', 'E']
     output: list[list[int]] = [[], [], [], [], [], []]
     last_lines: list[str] = []
