@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a1f76eb-5aef-4c5d-83db-a663dff5d021" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webFishingGuitar.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WetHands.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/headOnYourSholder.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/playSong.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/undertale.tab" afterDir="false" />
+    <list default="true" id="2a1f76eb-5aef-4c5d-83db-a663dff5d021" name="Changes" comment="Upload">
+      <change afterPath="$PROJECT_DIR$/ElderScrolls.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MerryGoRoundOfLife" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Minecraft.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playSong.py" beforeDir="false" afterPath="$PROJECT_DIR$/playSong.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/undertale.tab" beforeDir="false" afterPath="$PROJECT_DIR$/undertale.tab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,22 +27,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ECantDo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ECantDo/WebFishingGuitarPlayer.git&quot;,
+    &quot;accountId&quot;: &quot;43a05e5e-31e7-4c64-b4ea-44fc8cd82195&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2vy3vcRipe7NpY8HD0qDAHsAYiK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.playSong.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.playSong.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="playSong" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="webFishingGuitar" />
@@ -93,9 +100,22 @@
       <option name="presentableId" value="Default" />
       <updated>1745103717717</updated>
     </task>
+    <task id="LOCAL-00001" summary="Upload">
+      <option name="closed" value="true" />
+      <created>1745109427470</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745109427470</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.tab" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload" />
   </component>
 </project>

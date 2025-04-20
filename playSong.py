@@ -1,8 +1,14 @@
 import keyboard
+import pyautogui
 import time
+import re
 
-file_name = "WetHands.txt"
+file_name = "Minecraft.txt"
 keys: list[str] = ['y', 't', 'r', 'e', 'w', 'q']
+
+BPM = 300
+
+positions = [(94, 245), (145, 248)]
 
 
 def main(file: str):
@@ -12,24 +18,43 @@ def main(file: str):
 
     time.sleep(3)
     print("Playing")
-    play(tab_data, 350)
+    play(tab_data, BPM)
     pass
 
 
 def play(tab_data: list[list[int]], bpm: int):
     delay: float = 60 / bpm
+    delay_time = 0.02
+    shapes = 1
+    pyautogui.click(*positions[0])
     for i in range(len(tab_data[0])):
+        if keyboard.is_pressed('esc'):
+            print("Escape key pressed.")
+            break
         # print(f"Measure {i}\r", end="")
         hold_delay = 0
         for j in range(6):
             note: int = tab_data[j][i]
             if note == -1:
                 continue
-            note += 1
+
+            if note >= 9 and shapes != 2:
+                pyautogui.click(*positions[1])
+                shapes = 2
+
+            if note < 9 and shapes != 1:
+                pyautogui.click(*positions[0])
+                shapes = 1
+
+            if shapes == 2:
+                note -= 8
+            else:
+                note += 1
+
             keyboard.press(str(note))
             keyboard.press(keys[j])
-            time.sleep(0.05)
-            hold_delay += 0.05
+            time.sleep(delay_time)
+            hold_delay += delay_time
             keyboard.release(str(note))
             keyboard.release(keys[j])
             # print(f"{note} {keys[j]}")
@@ -41,9 +66,24 @@ def play(tab_data: list[list[int]], bpm: int):
     pass
 
 
+def parse_tab_line(line: str, capo: int, nulls: list[str]) -> list[int]:
+    frets = []
+    tokens = re.findall(r'[\d]+|[^0-9]', line)
+    for token in tokens:
+        if token in nulls:
+            frets.append(-1)
+        elif token.isdigit():
+            fret = int(token) + capo
+            frets.append(fret)
+        else:
+            frets.append(-1)
+    return frets
+
+
 def read_in_file(file_name: str) -> list[list[int]]:
     file = open(file_name, 'r')
-    nulls = ['-', 'x', '/', '\\', 'p', 'h']
+    nulls = ['-', 'x', '/', '\\', 'p', 'h', 't', 'b']
+    line_start = ['e', 'B', 'G', 'D', 'A', 'E']
     output: list[list[int]] = [[], [], [], [], [], []]
     last_lines: list[str] = []
     line: str = ""
@@ -52,72 +92,27 @@ def read_in_file(file_name: str) -> list[list[int]]:
         line = line.strip()
         print(line)
 
+        if len(line) == 0:
+            continue
+
         if line.startswith('Capo'):
             capo = int(line.split(" ")[1])
+            continue
+
+        if line.startswith("BPM"):
+            global BPM
+            BPM = int(line.split(" ")[1])
             continue
 
         if line == "END":
             break
 
-        if line.startswith('e'):
-            last_lines = []
-            numbers: str = "".join(line.split("|")[1:])
-            last_lines.append(numbers)
-            for c in numbers:
-                if c in nulls:
-                    output[0].append(-1)
-                else:
-                    output[0].append(int(c) + capo)
-            continue
+        start_line = line[0]
 
-        if line.startswith('B'):
+        if start_line in line_start:
+            index = line_start.index(start_line)
             numbers: str = "".join(line.split("|")[1:])
-            last_lines.append(numbers)
-            for c in numbers:
-                if c in nulls:
-                    output[1].append(-1)
-                else:
-                    output[1].append(int(c) + capo)
-            continue
-
-        if line.startswith('G'):
-            numbers: str = "".join(line.split("|")[1:])
-            last_lines.append(numbers)
-            for c in numbers:
-                if c in nulls:
-                    output[2].append(-1)
-                else:
-                    output[2].append(int(c) + capo)
-            continue
-
-        if line.startswith('D'):
-            numbers: str = "".join(line.split("|")[1:])
-            last_lines.append(numbers)
-            for c in numbers:
-                if c in nulls:
-                    output[3].append(-1)
-                else:
-                    output[3].append(int(c) + capo)
-            continue
-
-        if line.startswith('A'):
-            numbers: str = "".join(line.split("|")[1:])
-            last_lines.append(numbers)
-            for c in numbers:
-                if c in nulls:
-                    output[4].append(-1)
-                else:
-                    output[4].append(int(c) + capo)
-            continue
-
-        if line.startswith('E'):
-            numbers: str = "".join(line.split("|")[1:])
-            last_lines.append(numbers)
-            for c in numbers:
-                if c in nulls:
-                    output[5].append(-1)
-                else:
-                    output[5].append(int(c) + capo)
+            output[index].extend(parse_tab_line(numbers, capo, nulls))
             continue
 
         pass
@@ -125,8 +120,8 @@ def read_in_file(file_name: str) -> list[list[int]]:
 
     for L in output:
         for N in L:
-            if N > 9:
-                print("Note fret > 9")
+            if N > 15:
+                print(f"Note fret > 15 ({N})")
                 exit(1)
 
     return output
@@ -135,3 +130,4 @@ def read_in_file(file_name: str) -> list[list[int]]:
 
 if __name__ == "__main__":
     main(file_name)
+    pass
