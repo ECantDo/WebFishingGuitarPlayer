@@ -33,8 +33,11 @@ def play(tab_data: list[list[int]], bpm: int):
             break
         # print(f"Measure {i}\r", end="")
         hold_delay = 0
+        notes = []
         for j in range(6):
-            note: int = tab_data[j][i]
+            notes.append(tab_data[j][i])
+        notes.sort()
+        for note in notes:
             if note == -1:
                 continue
 
