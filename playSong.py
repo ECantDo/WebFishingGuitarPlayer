@@ -3,10 +3,10 @@ import pyautogui
 import time
 import re
 
-file_name = "MonkeyIsland.txt"
+file_name = "Waltz2.txt"
 keys: list[str] = ['y', 't', 'r', 'e', 'w', 'q']
 
-BPM = 450
+BPM = 360
 
 positions = [(94, 245), (145, 248)]
 
@@ -27,8 +27,9 @@ def play(tab_data: list[list[int]], bpm: int):
     delay_time = 0.02
     shapes = 1
     pyautogui.click(*positions[0])
-    playcount = min(tab_data[0], tab_data[1], tab_data[2], tab_data[3], tab_data[4], tab_data[5])
-    for i in range(len(tab_data[0])):
+    play_count = min([len(tab_data[0]), len(tab_data[1]), len(tab_data[2]), len(tab_data[3]),
+                      len(tab_data[4]), len(tab_data[5])])
+    for i in range(play_count):
         if keyboard.is_pressed('esc'):
             print("Escape key pressed.")
             break

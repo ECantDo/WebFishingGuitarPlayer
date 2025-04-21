@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a1f76eb-5aef-4c5d-83db-a663dff5d021" name="Changes" comment="Sorting the notes to be played">
-      <change afterPath="$PROJECT_DIR$/AvatarsLove.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blackbird.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bublegum.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MonkeyIsland.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moonlight1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PromiseToTheWorld.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sweeden.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tetris.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Waltz2.txt" afterDir="false" />
+    <list default="true" id="2a1f76eb-5aef-4c5d-83db-a663dff5d021" name="Changes" comment="Tweaks&#10;&#10;And new songs">
+      <change afterPath="$PROJECT_DIR$/Beethoven5th.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DavyJones.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gymnopedie.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HesAPirate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UndertaleHome.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ElderScrolls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ElderScrolls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MerryGoRoundOfLife" beforeDir="false" afterPath="$PROJECT_DIR$/MerryGoRoundOfLife.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minecraft.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Minecraft.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WetHands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WetHands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvatarsLove.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AvatarsLove.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackbird.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Blackbird.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bublegum.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Bublegum.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PromiseToTheWorld.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PromiseToTheWorld.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playSong.py" beforeDir="false" afterPath="$PROJECT_DIR$/playSong.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/undertale.tab" beforeDir="false" afterPath="$PROJECT_DIR$/undertale.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745131785416</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Tweaks&#10;&#10;And new songs">
+      <option name="closed" value="true" />
+      <created>1745140901594</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745140901594</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -144,6 +147,7 @@
     <MESSAGE value="Upload" />
     <MESSAGE value="Higher notes addition" />
     <MESSAGE value="Sorting the notes to be played" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorting the notes to be played" />
+    <MESSAGE value="Tweaks&#10;&#10;And new songs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tweaks&#10;&#10;And new songs" />
   </component>
 </project>
