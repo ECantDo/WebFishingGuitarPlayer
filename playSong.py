@@ -3,12 +3,18 @@ import pyautogui
 import time
 import re
 
+# Name of the file containing the guitar tab
 file_name = "Waltz2.txt"
-keys: list[str] = ['y', 't', 'r', 'e', 'w', 'q']
 
+# Sets the rough BPM of the song (not all that accurate), if the file has "BPM 500" in it
+#  the BPM here will be over-written
 BPM = 360
 
+# Button locations, first coordinates for the first chord shape having the first 9 layers
+# second coordinates is for the second chord shape having from 10 to 15
 positions = [(94, 245), (145, 248)]
+
+keys: list[str] = ['y', 't', 'r', 'e', 'w', 'q']
 
 
 def main(file: str):
